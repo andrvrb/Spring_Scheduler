@@ -57,4 +57,24 @@ public class ScheduledTaskService {
         Thread.sleep(3000);
         log.info("scheduleFixedRateTask: end");
     }
+
+    /**
+     *  ┌───────────── second (0-59)
+     *  │ ┌───────────── minute (0 - 59)
+     *  │ │ ┌───────────── hour (0 - 23)
+     *  │ │ │ ┌───────────── day of the month (1 - 31)
+     *  │ │ │ │ ┌───────────── month (1 - 12) (or JAN-DEC)
+     *  │ │ │ │ │ ┌───────────── day of the week (0 - 7)
+     *  │ │ │ │ │ │          (0 or 7 is Sunday, or MON-SUN)
+     *  │ │ │ │ │ │
+     *  * * * * * *
+     * */
+
+    // выражение 0 10 12 11 * ? означает что задачу необходимо запускать в 12 часов 10 минут 00 секунд, каждого 11-го числа
+    @Scheduled(cron = "0 * * * * ?", zone = "Europe/Moscow")
+    public void scheduleCronExpressionTask() throws InterruptedException {
+        log.info("scheduleCronExpressionTask: begin");
+        Thread.sleep(3000);
+        log.info("scheduleCronExpressionTask: end");
+    }
 }
