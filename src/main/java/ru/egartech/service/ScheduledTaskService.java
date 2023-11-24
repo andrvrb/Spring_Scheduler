@@ -39,10 +39,18 @@ public class ScheduledTaskService {
      * */
     //fixedRate - время, через которое будет запущена новая задача
     //значение в fixedRate больше чем значение в Thread.sleep, то есть работа метода укладывается в заданный интервал
-    @Scheduled(fixedRate = 3000)
+/*    @Scheduled(fixedRate = 3000)
     public void scheduleFixedRateTask() throws InterruptedException {
         log.info("scheduleFixedRateTask: begin");
         Thread.sleep(1000);
+        log.info("scheduleFixedRateTask: end");
+    }*/
+
+    // fixedRate=1000 и Thread.sleep(3000)
+    @Scheduled(fixedRate = 1000)
+    public void scheduleFixedRateTask() throws InterruptedException {
+        log.info("scheduleFixedRateTask: begin");
+        Thread.sleep(3000);
         log.info("scheduleFixedRateTask: end");
     }
 }
