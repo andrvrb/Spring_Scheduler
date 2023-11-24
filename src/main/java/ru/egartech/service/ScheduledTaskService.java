@@ -2,11 +2,14 @@ package ru.egartech.service;
 
 
 import lombok.extern.log4j.Log4j2;
+import org.springframework.scheduling.annotation.Async;
+import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 @Log4j2
 @Service
+@EnableAsync
 public class ScheduledTaskService {
 
 /**
@@ -47,6 +50,7 @@ public class ScheduledTaskService {
     }*/
 
     // fixedRate=1000 и Thread.sleep(3000)
+    @Async
     @Scheduled(fixedRate = 1000)
     public void scheduleFixedRateTask() throws InterruptedException {
         log.info("scheduleFixedRateTask: begin");
