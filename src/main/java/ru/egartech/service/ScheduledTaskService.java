@@ -20,12 +20,12 @@ public class ScheduledTaskService {
  * */
 
 // fixedDelay - время задержки  в миллисекундах
-/*    @Scheduled(fixedDelay = 1000)
+    @Scheduled(fixedDelay = 1000)
     public void scheduleFixedDelayTask() throws InterruptedException {
         log.info("scheduleFixedDelayTask: begin");
         Thread.sleep(2000);
         log.info("scheduleFixedDelayTask: end");
-    }*/
+    }
 
 // initialDelay задержка перед первым выполнением метода
 /*    @Scheduled(fixedDelay = 1000, initialDelay = 10000)
