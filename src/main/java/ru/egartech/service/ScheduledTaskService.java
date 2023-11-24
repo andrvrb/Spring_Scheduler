@@ -77,4 +77,18 @@ public class ScheduledTaskService {
         Thread.sleep(3000);
         log.info("scheduleCronExpressionTask: end");
     }
+
+    @Scheduled(fixedDelayString = "${task.fixed.delay.millis}")
+    public void scheduleFixedDelayParametrizedTask() throws InterruptedException {
+        log.info("scheduleFixedDelayParametrizedTask: begin");
+        Thread.sleep(2000);
+        log.info("scheduleFixedDelayParametrizedTask: end");
+    }
+
+    @Scheduled(fixedRateString = "${task.fixed.rate.millis}")
+    public void scheduleFixedRateParametrizedTask() throws InterruptedException {
+        log.info("scheduleFixedRateParametrizedTask: begin");
+        Thread.sleep(2000);
+        log.info("scheduleFixedRateParametrizedTask: end");
+    }
 }
